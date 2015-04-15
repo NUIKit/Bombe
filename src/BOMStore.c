@@ -84,7 +84,7 @@ BOMStoreRef BOMStoreCreateWithPath(const char *path) {
 	BOMStreamFree(stream);
 	
 	// mmap in the BOM file.
-	if ((store->mmapAddr = mmap(NULL, stat.st_size, PROT_READ, MAP_ANON | MAP_PRIVATE, fd, 0)) == MAP_FAILED) {
+	if ((store->mmapAddr = mmap(NULL, stat.st_size, PROT_READ, MAP_ANON | MAP_PRIVATE, fd, VM_FLAGS_FIXED)) == MAP_FAILED) {
 		close(fd);
 		BOMStoreFree(store);
 		return NULL;
@@ -112,12 +112,12 @@ void BOMStoreFree(BOMStoreRef sto) {
 	if (store != NULL) {
 		if (store->blockTable != 0) {
 			if (vm_deallocate(mach_task_self(), (vm_address_t)store->blockTable, store->blockTableSize) != KERN_SUCCESS) {
-//				BOMAssert("vm_deallocate failed");
+				BOMAssert(false, "vm_deallocate failed");
 			}
 		}
-		if (store->mmapSize != 0x0) {
+		if (store->mmapSize != 0) {
 			if (munmap(store->mmapAddr, store->mmapSize) == -1) {
-//				BOMAssert("munmap failed");
+				BOMAssert(false, "munmap failed");
 			}
 		}
 		free(store);
@@ -216,13 +216,13 @@ static void BOMExpandBlockTable(BOMStoreRef st, vm_size_t newSize) {
 		}
 		BOMBlock *reallocAddr;
 		if (vm_allocate(mach_task_self(), (vm_address_t *)&reallocAddr, size, VM_FLAGS_ANYWHERE) != KERN_SUCCESS) {
-//			BOMAssert("vm_allocate failed");
+			BOMAssert(false, "vm_allocate failed");
 		}
 		if (vm_copy(mach_task_self(), (vm_address_t)store->blockTable, store->blockTableSize, (vm_address_t)reallocAddr) != KERN_SUCCESS) {
-//			BOMAssert("vm_copy failed");
+			BOMAssert(false, "vm_copy failed");
 		}
 		if (vm_deallocate(mach_task_self(), (vm_address_t)store->blockTable, store->blockTableSize) != KERN_SUCCESS) {
-//			BOMAssert("vm_deallocate failed");
+			BOMAssert(false, "vm_deallocate failed");
 		}
 		store->blockTable = reallocAddr;
 		store->blockTableSize = newSize;

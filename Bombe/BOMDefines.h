@@ -29,4 +29,12 @@
 	#define BOMBE_EXPECT(x, v) (x)
 #endif
 
+#define BOMAssert(e, MSG) \
+	do { \
+		typeof(e) _e = ((typeof(e))__builtin_expect((long)(e), ~0l)); \
+		if (!_e) { \
+			abort(); \
+		} \
+	} while (0)
+
 #endif
