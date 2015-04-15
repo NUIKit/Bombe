@@ -34,7 +34,7 @@
  * |                                                 |
  * | 8  magic                    - 'BOMStore'        |
  * | 32 version                  -  1                |
- * | 32 ?                        - "73"              |
+ * | 32 block count              - "73"              |
  * | 32 index offset             -                   |
  * | 32 index length             -                   |
  * | 32 table of contents offset -                   |
