@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		841DBC521A915D35003F4EE0 /* BOMStack.c in Sources */ = {isa = PBXBuildFile; fileRef = 841DBC511A915D35003F4EE0 /* BOMStack.c */; };
+		841DBC541A915D40003F4EE0 /* BOMStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 841DBC531A915D40003F4EE0 /* BOMStack.h */; };
+		84FE01B31A85A1C0006D3EEA /* BOMStream.c in Sources */ = {isa = PBXBuildFile; fileRef = 84FE01B21A85A1C0006D3EEA /* BOMStream.c */; };
+		84FE01B51A85A3BF006D3EEA /* BOMStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01B41A85A3AE006D3EEA /* BOMStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84FE01B61A85A3C5006D3EEA /* Bombe.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01B11A85A0B5006D3EEA /* Bombe.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84FE01B81A85A595006D3EEA /* Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01B71A85A595006D3EEA /* Internal.h */; };
+		84FE01BA1A85A91E006D3EEA /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01B91A85A91E006D3EEA /* config.h */; };
+		84FE01BC1A85ABE7006D3EEA /* BOMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01BB1A85ABE7006D3EEA /* BOMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84FE01BE1A85B298006D3EEA /* BOMStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01BD1A85B298006D3EEA /* BOMStore.h */; };
+		84FE01C01A85B2A4006D3EEA /* BOMStore.c in Sources */ = {isa = PBXBuildFile; fileRef = 84FE01BF1A85B2A4006D3EEA /* BOMStore.c */; };
+		84FE01C21A86AAE8006D3EEA /* BOMTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 84FE01C11A86AAE8006D3EEA /* BOMTree.c */; };
+		84FE01C41A86AAF7006D3EEA /* BOMTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01C31A86AAF7006D3EEA /* BOMTree.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		841DBC511A915D35003F4EE0 /* BOMStack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = BOMStack.c; path = src/BOMStack.c; sourceTree = "<group>"; };
+		841DBC531A915D40003F4EE0 /* BOMStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOMStack.h; path = Bombe/BOMStack.h; sourceTree = "<group>"; };
+		84FE01AA1A859E07006D3EEA /* libBombe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBombe.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84FE01B11A85A0B5006D3EEA /* Bombe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Bombe.h; path = Bombe/Bombe.h; sourceTree = "<group>"; };
+		84FE01B21A85A1C0006D3EEA /* BOMStream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = BOMStream.c; path = src/BOMStream.c; sourceTree = "<group>"; };
+		84FE01B41A85A3AE006D3EEA /* BOMStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BOMStream.h; path = Bombe/BOMStream.h; sourceTree = "<group>"; };
+		84FE01B71A85A595006D3EEA /* Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Internal.h; path = src/Internal.h; sourceTree = "<group>"; };
+		84FE01B91A85A91E006D3EEA /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = config/config.h; sourceTree = "<group>"; };
+		84FE01BB1A85ABE7006D3EEA /* BOMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOMDefines.h; path = Bombe/BOMDefines.h; sourceTree = "<group>"; };
+		84FE01BD1A85B298006D3EEA /* BOMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOMStore.h; path = Bombe/BOMStore.h; sourceTree = "<group>"; };
+		84FE01BF1A85B2A4006D3EEA /* BOMStore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = BOMStore.c; path = src/BOMStore.c; sourceTree = "<group>"; };
+		84FE01C11A86AAE8006D3EEA /* BOMTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = BOMTree.c; path = src/BOMTree.c; sourceTree = "<group>"; };
+		84FE01C31A86AAF7006D3EEA /* BOMTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOMTree.h; path = Bombe/BOMTree.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84FE01A71A859E07006D3EEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84FE01A11A859E07006D3EEA = {
+			isa = PBXGroup;
+			children = (
+				84FE01B11A85A0B5006D3EEA /* Bombe.h */,
+				84FE01B71A85A595006D3EEA /* Internal.h */,
+				84FE01BB1A85ABE7006D3EEA /* BOMDefines.h */,
+				84FE01B91A85A91E006D3EEA /* config.h */,
+				84FE01BF1A85B2A4006D3EEA /* BOMStore.c */,
+				84FE01BD1A85B298006D3EEA /* BOMStore.h */,
+				841DBC511A915D35003F4EE0 /* BOMStack.c */,
+				841DBC531A915D40003F4EE0 /* BOMStack.h */,
+				84FE01B21A85A1C0006D3EEA /* BOMStream.c */,
+				84FE01B41A85A3AE006D3EEA /* BOMStream.h */,
+				84FE01C11A86AAE8006D3EEA /* BOMTree.c */,
+				84FE01C31A86AAF7006D3EEA /* BOMTree.h */,
+				84FE01AB1A859E07006D3EEA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84FE01AB1A859E07006D3EEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84FE01AA1A859E07006D3EEA /* libBombe.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		84FE01A81A859E07006D3EEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84FE01BA1A85A91E006D3EEA /* config.h in Headers */,
+				84FE01B81A85A595006D3EEA /* Internal.h in Headers */,
+				84FE01B61A85A3C5006D3EEA /* Bombe.h in Headers */,
+				84FE01C41A86AAF7006D3EEA /* BOMTree.h in Headers */,
+				841DBC541A915D40003F4EE0 /* BOMStack.h in Headers */,
+				84FE01B51A85A3BF006D3EEA /* BOMStream.h in Headers */,
+				84FE01BC1A85ABE7006D3EEA /* BOMDefines.h in Headers */,
+				84FE01BE1A85B298006D3EEA /* BOMStore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		84FE01A91A859E07006D3EEA /* Bombe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84FE01AE1A859E07006D3EEA /* Build configuration list for PBXNativeTarget "Bombe" */;
+			buildPhases = (
+				84FE01A61A859E07006D3EEA /* Sources */,
+				84FE01A71A859E07006D3EEA /* Frameworks */,
+				84FE01A81A859E07006D3EEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bombe;
+			productName = Bombe;
+			productReference = 84FE01AA1A859E07006D3EEA /* libBombe.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84FE01A21A859E07006D3EEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = CodaFi;
+				TargetAttributes = {
+					84FE01A91A859E07006D3EEA = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 84FE01A51A859E07006D3EEA /* Build configuration list for PBXProject "Bombe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 84FE01A11A859E07006D3EEA;
+			productRefGroup = 84FE01AB1A859E07006D3EEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84FE01A91A859E07006D3EEA /* Bombe */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84FE01A61A859E07006D3EEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84FE01C01A85B2A4006D3EEA /* BOMStore.c in Sources */,
+				84FE01C21A86AAE8006D3EEA /* BOMTree.c in Sources */,
+				84FE01B31A85A1C0006D3EEA /* BOMStream.c in Sources */,
+				841DBC521A915D35003F4EE0 /* BOMStack.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84FE01AC1A859E07006D3EEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		84FE01AD1A859E07006D3EEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		84FE01AF1A859E07006D3EEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(INSTALL_PATH_PREFIX)/usr/include/Bombe";
+			};
+			name = Debug;
+		};
+		84FE01B01A859E07006D3EEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(INSTALL_PATH_PREFIX)/usr/include/Bombe";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84FE01A51A859E07006D3EEA /* Build configuration list for PBXProject "Bombe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84FE01AC1A859E07006D3EEA /* Debug */,
+				84FE01AD1A859E07006D3EEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84FE01AE1A859E07006D3EEA /* Build configuration list for PBXNativeTarget "Bombe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84FE01AF1A859E07006D3EEA /* Debug */,
+				84FE01B01A859E07006D3EEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84FE01A21A859E07006D3EEA /* Project object */;
+}

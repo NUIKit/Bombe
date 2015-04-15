@@ -1,5 +1,6 @@
 # Xcode
 #
+.DS_Store
 build/
 *.pbxuser
 !default.pbxuser
@@ -16,6 +17,35 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+
+*.lo
+*.o
+*.la
+config.*
+.deps
+.libs
+
+# http://www.gnu.org/software/automake
+
+Makefile.in
+CMakeCache.txt
+CMakeFiles
+Makefile
+libtool
+cmake_install.cmake
+install_manifest.txt
+
+# http://www.gnu.org/software/autoconf
+
+/autom4te.cache
+/aclocal.m4
+/compile
+/config
+/configure
+/depcomp
+/install-sh
+/missing
+/stamp-h1
 
 # CocoaPods
 #
