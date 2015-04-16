@@ -68,7 +68,7 @@ BOMStreamRef BOMStreamCreateWithFileDescriptor(int fd, size_t size) {
 	return stream;
 }
 
-BOMStreamRef BOMStreamCreateWithBlockID(BOMStoreRef sto, BOMVar var, uint32_t blockID) {
+BOMStreamRef BOMStreamCreateWithBlockID(BOMStoreRef sto, BOMBlock var, uint32_t blockID) {
 	if (blockID == 0) {
 		return NULL;
 	}
