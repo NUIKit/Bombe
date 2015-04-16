@@ -13,4 +13,10 @@
 
 typedef struct __BOMTree * const BOMTreeRef;
 
+BOMBE_EXPORT
+BOMTreeRef BOMTreeCreateTraversingPath(BOMStoreRef store, const char *name);
+
+BOMBE_EXPORT
+void BOMTreeFree(BOMTreeRef tree);
+
 #endif
