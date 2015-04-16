@@ -93,7 +93,7 @@ BOMStoreRef BOMStoreCreateWithPath(const char *path) {
 	// Create the block table...
 	BOMStoreCreateBlockTable(store);
 	
-	//  Stream the index into memory.
+	//  Stream the index into memory and extract the block table.
 	BOMStreamRef indexStream = BOMStreamCreateWithBuffer(store->mmapAddr + store->header.indexOffset, store->header.indexLength);
 	if (BOMReadBlockTable(store, indexStream) == false) {
 		close(fd);
@@ -124,7 +124,7 @@ void BOMStoreFree(BOMStoreRef sto) {
 	}
 }
 
-bool BOMStoreGetBlockWithName(BOMStoreRef sto, const char *name, BOMBlock *outBlock) {
+bool BOMStoreGetVarWithName(BOMStoreRef sto, const char *name, BOMVar *outBlock) {
 	struct __BOMStore *store = (struct __BOMStore *)sto;
 
 	if (name == NULL) {
@@ -157,16 +157,36 @@ bool BOMStoreGetBlockWithName(BOMStoreRef sto, const char *name, BOMBlock *outBl
 		BOMStreamRead(stream, buf, nameLen);
 		if (strcmp(buf, name) == 0) {
 			BOMStreamFree(stream);
-			*outBlock = (BOMBlock){ index, nameLen, buf };
+			*outBlock = (BOMVar){ index, nameLen, buf };
 		}		
 	}
 	BOMStreamFree(stream);
 	return outBlock != NULL;
 }
 
+void *BOMStoreCopyBlockData(BOMStoreRef sto, BOMVar var) {
+	struct __BOMStore *store = (struct __BOMStore *)sto;
+
+	if (ntohl(var.index) >= ntohl(store->blockTableCount)) {
+		return NULL;
+	}
+	
+	BOMBlock *block = sto->blockTable + ntohl(var.index);
+	uint32_t addr = ntohl(block->index);
+	
+	BOMStreamRef blockStream = BOMStreamCreateWithBuffer(store->mmapAddr + addr, block->size);
+	void *blockData = malloc(block->size);
+	if (blockStream && blockData) {
+		BOMStreamRead(blockStream, blockData, block->size);
+	}
+	BOMStreamFree(blockStream);
+
+	return blockData;
+}
+
 static void BOMStoreCreateBlockTable(BOMStoreRef sto) {
 	struct __BOMStore *store = (struct __BOMStore *)sto;
-	if (store != 0x0) {
+	if (store != NULL) {
 		size_t size = PAGE_SIZE;
 		if (size % vm_page_size != 0) {
 			size += vm_page_size - (size % vm_page_size);
