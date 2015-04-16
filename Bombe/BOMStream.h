@@ -10,6 +10,7 @@
 #define __BOMBE_STREAM__
 
 #include <Bombe/BOMDefines.h>
+#include <Bombe/BOMStore.h>
 
 #include <stdbool.h>
 #include <stdlib.h>
@@ -34,6 +35,9 @@ BOMStreamRef BOMStreamCreateWithBuffer(void *buffer, size_t size);
 
 BOMBE_EXPORT
 BOMStreamRef BOMStreamCreateWithFileDescriptor(int fd, size_t size);
+
+BOMBE_EXPORT
+BOMStreamRef BOMStreamCreateWithBlockID(BOMStoreRef sto, BOMVar var, uint32_t blockID);
 
 BOMBE_EXPORT
 bool BOMStreamFlush(BOMStreamRef stream);

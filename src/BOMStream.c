@@ -11,6 +11,7 @@
 
 struct __BOMStream {
 	int fd;
+	uint32_t blockID;
 	BOMStreamType type;
 	BOMStreamByteOrder byteOrder;
 	void *buf;
@@ -30,6 +31,7 @@ BOMStreamRef BOMStreamCreateWithBuffer(void *buffer, size_t size) {
 	}
 	
 	stream->fd = -1;
+	stream->blockID = 0;
 	stream->type = BOMStreamTypeBuffer;
 	stream->byteOrder = BOMStreamByteOrderLittleEndian;
 	stream->size = size;
@@ -56,10 +58,32 @@ BOMStreamRef BOMStreamCreateWithFileDescriptor(int fd, size_t size) {
 	}
 	
 	stream->fd = fd;
+	stream->blockID = 0;
 	stream->type = BOMStreamTypeFile;
 	stream->byteOrder = BOMStreamByteOrderLittleEndian;
 	stream->size = size;
 	stream->buf = buffer;
+	stream->pos = 0;
+	stream->dirty = false;
+	return stream;
+}
+
+BOMStreamRef BOMStreamCreateWithBlockID(BOMStoreRef sto, BOMVar var, uint32_t blockID) {
+	if (blockID == 0) {
+		return NULL;
+	}
+	
+	struct __BOMStream *stream = malloc(sizeof(struct __BOMStream));
+	if (stream == NULL) {
+		return NULL;
+	}
+	
+	stream->fd = -1;
+	stream->blockID = blockID;
+	stream->type = BOMStreamTypeBlockID;
+	stream->byteOrder = BOMStreamByteOrderLittleEndian;
+	stream->size = 0;
+	stream->buf = BOMStoreCopyBlockData(r15, var_30);
 	stream->pos = 0;
 	stream->dirty = false;
 	return stream;
