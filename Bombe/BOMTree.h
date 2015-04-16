@@ -10,6 +10,7 @@
 #define __BOMBE_BOMTREE__
 
 #include <Bombe/BOMDefines.h>
+#include <Bombe/BOMStore.h>
 
 typedef struct __BOMTree * const BOMTreeRef;
 

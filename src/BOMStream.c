@@ -83,7 +83,7 @@ BOMStreamRef BOMStreamCreateWithBlockID(BOMStoreRef sto, BOMVar var, uint32_t bl
 	stream->type = BOMStreamTypeBlockID;
 	stream->byteOrder = BOMStreamByteOrderLittleEndian;
 	stream->size = 0;
-	stream->buf = BOMStoreCopyBlockData(r15, var_30);
+	stream->buf = BOMStoreCopyBlockData(sto, var);
 	stream->pos = 0;
 	stream->dirty = false;
 	return stream;
