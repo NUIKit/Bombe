@@ -11,7 +11,7 @@
 #include "Internal.h"
 
 struct __BOMStore {
-	struct {
+	struct BOMHeader {
 		uint32_t blockCount;
 		uint32_t indexOffset;
 		uint32_t indexLength;
@@ -22,17 +22,28 @@ struct __BOMStore {
 	void *mmapAddr;
 	size_t mmapSize;
 
-	int32_t blockTableCount;
+	uint32_t blockTableCount;
 	BOMBlock *blockTable;
 	ssize_t blockTableSize;
 };
 
+static struct __BOMStore *BOMStoreCreate(const char *, bool);
 static void BOMStoreCreateBlockTable(BOMStoreRef);
 static bool BOMReadBlockTable(BOMStoreRef, BOMStreamRef);
 static void BOMExpandBlockTable(BOMStoreRef, size_t);
 
+BOMMutableStoreRef BOMStoreCreateMutableWithPath(const char *path) {
+	return BOMStoreCreate(path, true);
+}
+
 BOMStoreRef BOMStoreCreateWithPath(const char *path) {
-	int fd = open(path, O_NOFOLLOW | O_NONBLOCK | O_TRUNC);
+	return BOMStoreCreate(path, false);
+}
+
+struct __BOMStore *BOMStoreCreate(const char *path, bool mutable) {
+	int flags = O_NOFOLLOW | O_NONBLOCK | O_TRUNC;
+	flags |= mutable ? O_RDWR : O_RDONLY;
+	int fd = open(path, flags);
 	if (fd == -1) {
 		return NULL;
 	}
@@ -52,7 +63,7 @@ BOMStoreRef BOMStoreCreateWithPath(const char *path) {
 	uint32_t head1, head2;
 	BOMStreamReadUInt32(stream, &head1);
 	BOMStreamReadUInt32(stream, &head2);
-
+	
 	// All BOM files begin with `BOMStore`
 	if ((head1 != 'BOMS') || (head2 != 'tore')) {
 		close(fd);
@@ -124,7 +135,7 @@ void BOMStoreFree(BOMStoreRef sto) {
 	}
 }
 
-bool BOMStoreGetVarWithName(BOMStoreRef sto, const char *name, BOMVar *outBlock) {
+bool BOMStoreGetBlockWithName(BOMStoreRef sto, const char *name, BOMBlock *outBlock) {
 	struct __BOMStore *store = (struct __BOMStore *)sto;
 
 	if (name == NULL) {
@@ -157,7 +168,7 @@ bool BOMStoreGetVarWithName(BOMStoreRef sto, const char *name, BOMVar *outBlock)
 		BOMStreamRead(stream, buf, nameLen);
 		if (strcmp(buf, name) == 0) {
 			BOMStreamFree(stream);
-			*outBlock = (BOMVar){ index, nameLen, buf };
+			*outBlock = (BOMBlock){ index, nameLen };
 		}		
 	}
 	BOMStreamFree(stream);
