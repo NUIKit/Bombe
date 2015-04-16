@@ -175,7 +175,25 @@ bool BOMStoreGetBlockWithName(BOMStoreRef sto, const char *name, BOMBlock *outBl
 	return outBlock != NULL;
 }
 
-void *BOMStoreCopyBlockData(BOMStoreRef sto, BOMVar var) {
+
+uint32_t BOMStoreCreateNewBlock(BOMMutableStoreRef sto) {	
+	struct __BOMStore *store = (struct __BOMStore *)sto;
+
+	uint32_t result = 0;
+	if (store != NULL) {
+		struct BOMHeader head = store->header;
+		result = (head.blockCount++);
+		store->header = head;
+		if (result >= store->blockTableCount) {
+			BOMExpandBlockTable(store, store->blockTableSize * 2);
+			store->blockTableCount++;
+		}
+		store->blockTable[result] = (BOMBlock){0};
+	}
+	return result;
+}
+
+void *BOMStoreCopyBlockData(BOMStoreRef sto, BOMBlock var) {
 	struct __BOMStore *store = (struct __BOMStore *)sto;
 
 	if (ntohl(var.index) >= ntohl(store->blockTableCount)) {
