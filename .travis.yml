@@ -1,2 +1,5 @@
+before_install:
+  - ./autogen.sh
+
 language: c
-script: ./autogen.sh && ./configure && make
+
