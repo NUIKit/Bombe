@@ -67,7 +67,7 @@ bool BOMStoreGetBlockWithName(BOMStoreRef sto, const char *name, BOMBlock *outBl
 ///
 /// If the block does not exist, or it resides at an invalid index, the result will be 0.
 BOMBE_EXPORT
-uint32_t BOMStorageGetBlockSize(BOMStoreRef sto, BOMBlock block);
+uint32_t BOMStoreGetBlockSize(BOMStoreRef sto, BOMBlock block);
 
 /// Returns the data associated with a given block.
 ///
