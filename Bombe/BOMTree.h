@@ -37,7 +37,7 @@
 #include <Bombe/BOMStore.h>
 
 /// The type of BOM trees.
-typedef struct __BOMTree * const BOMTreeRef;
+typedef const struct __BOMTree * BOMTreeRef;
 
 /// Creates a new tree that loads a named entry in the table of contents in the given BOM store.
 ///
