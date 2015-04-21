@@ -1,9 +1,10 @@
 #
-# ACLOCAL_AMFLAGS = -I m4
+ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS=
 	Bombe \
-	src 
+	src \
+	test
     
 EXTRA_DIST=
 	LICENSE \
