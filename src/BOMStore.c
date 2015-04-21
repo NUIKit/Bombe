@@ -175,6 +175,16 @@ bool BOMStoreGetBlockWithName(BOMStoreRef sto, const char *name, BOMBlock *outBl
 	return outBlock != NULL;
 }
 
+uint32_t BOMStorageGetBlockSize(BOMStoreRef sto, BOMBlock block) {
+	uint32_t result = 0;
+	if ((sto != NULL) && (block.index != 0)) {
+		if (sto->header.blockCount >= block.index) {
+			return block.size;
+		}
+	}
+	return result;
+}
+
 
 uint32_t BOMStoreCreateNewBlock(BOMMutableStoreRef sto) {	
 	struct __BOMStore *store = (struct __BOMStore *)sto;
