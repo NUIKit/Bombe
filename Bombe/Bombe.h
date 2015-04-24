@@ -13,6 +13,7 @@
 #include <Availability.h>
 #include <TargetConditionals.h>
 #endif
+
 #include <sys/cdefs.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -20,6 +21,13 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <fcntl.h>
+
+#include <Bombe/BOMDefines.h>
+#include <Bombe/BOMStore.h>
+#include <Bombe/BOMStack.h>
+#include <Bombe/BOMStream.h>
+#include <Bombe/BOMTree.h>
+
 #endif
 
 /*
