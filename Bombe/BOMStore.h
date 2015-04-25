@@ -38,6 +38,7 @@
 #include <Bombe/BOMDefines.h>
 
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdlib.h>
 
 /// The type of references to immutable BOM Stores.
