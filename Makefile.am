@@ -1,14 +1,7 @@
 #
 ACLOCAL_AMFLAGS = -I m4
 
-SUBDIRS=
-	Bombe \
-	src \
-	test
+SUBDIRS = Bombe src
     
-EXTRA_DIST=
-	LICENSE \
-	autogen.sh \
-	config/config.h \
-	Bombe.xcodeproj 
+EXTRA_DIST = LICENSE autogen.sh config/config.h Bombe.xcodeproj 
 
