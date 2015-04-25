@@ -8,7 +8,7 @@
 
 #include "BOMStore.h"
 #include "BOMStream.h"
-#include "Internal.h"
+#include "BOMInternal.h"
 
 struct __BOMStore {
 	struct BOMHeader {

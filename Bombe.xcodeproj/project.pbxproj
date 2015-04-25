@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		841DBC521A915D35003F4EE0 /* BOMStack.c in Sources */ = {isa = PBXBuildFile; fileRef = 841DBC511A915D35003F4EE0 /* BOMStack.c */; };
 		841DBC541A915D40003F4EE0 /* BOMStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 841DBC531A915D40003F4EE0 /* BOMStack.h */; };
+		8476E1001AEB24B3005FFCB6 /* BOMInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 8476E0FF1AEB24B3005FFCB6 /* BOMInternal.h */; };
 		84FE01B31A85A1C0006D3EEA /* BOMStream.c in Sources */ = {isa = PBXBuildFile; fileRef = 84FE01B21A85A1C0006D3EEA /* BOMStream.c */; };
 		84FE01B51A85A3BF006D3EEA /* BOMStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01B41A85A3AE006D3EEA /* BOMStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84FE01B61A85A3C5006D3EEA /* Bombe.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01B11A85A0B5006D3EEA /* Bombe.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84FE01B81A85A595006D3EEA /* Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01B71A85A595006D3EEA /* Internal.h */; };
 		84FE01BA1A85A91E006D3EEA /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01B91A85A91E006D3EEA /* config.h */; };
 		84FE01BC1A85ABE7006D3EEA /* BOMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01BB1A85ABE7006D3EEA /* BOMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84FE01BE1A85B298006D3EEA /* BOMStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FE01BD1A85B298006D3EEA /* BOMStore.h */; };
@@ -24,11 +24,11 @@
 /* Begin PBXFileReference section */
 		841DBC511A915D35003F4EE0 /* BOMStack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = BOMStack.c; path = src/BOMStack.c; sourceTree = "<group>"; };
 		841DBC531A915D40003F4EE0 /* BOMStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOMStack.h; path = Bombe/BOMStack.h; sourceTree = "<group>"; };
+		8476E0FF1AEB24B3005FFCB6 /* BOMInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOMInternal.h; path = src/BOMInternal.h; sourceTree = "<group>"; };
 		84FE01AA1A859E07006D3EEA /* libBombe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBombe.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FE01B11A85A0B5006D3EEA /* Bombe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Bombe.h; path = Bombe/Bombe.h; sourceTree = "<group>"; };
 		84FE01B21A85A1C0006D3EEA /* BOMStream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = BOMStream.c; path = src/BOMStream.c; sourceTree = "<group>"; };
 		84FE01B41A85A3AE006D3EEA /* BOMStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BOMStream.h; path = Bombe/BOMStream.h; sourceTree = "<group>"; };
-		84FE01B71A85A595006D3EEA /* Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Internal.h; path = src/Internal.h; sourceTree = "<group>"; };
 		84FE01B91A85A91E006D3EEA /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = config/config.h; sourceTree = "<group>"; };
 		84FE01BB1A85ABE7006D3EEA /* BOMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOMDefines.h; path = Bombe/BOMDefines.h; sourceTree = "<group>"; };
 		84FE01BD1A85B298006D3EEA /* BOMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOMStore.h; path = Bombe/BOMStore.h; sourceTree = "<group>"; };
@@ -52,8 +52,8 @@
 			isa = PBXGroup;
 			children = (
 				84FE01B11A85A0B5006D3EEA /* Bombe.h */,
-				84FE01B71A85A595006D3EEA /* Internal.h */,
 				84FE01BB1A85ABE7006D3EEA /* BOMDefines.h */,
+				8476E0FF1AEB24B3005FFCB6 /* BOMInternal.h */,
 				84FE01B91A85A91E006D3EEA /* config.h */,
 				84FE01BF1A85B2A4006D3EEA /* BOMStore.c */,
 				84FE01BD1A85B298006D3EEA /* BOMStore.h */,
@@ -83,12 +83,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FE01BA1A85A91E006D3EEA /* config.h in Headers */,
-				84FE01B81A85A595006D3EEA /* Internal.h in Headers */,
 				84FE01B61A85A3C5006D3EEA /* Bombe.h in Headers */,
 				84FE01C41A86AAF7006D3EEA /* BOMTree.h in Headers */,
 				841DBC541A915D40003F4EE0 /* BOMStack.h in Headers */,
 				84FE01B51A85A3BF006D3EEA /* BOMStream.h in Headers */,
 				84FE01BC1A85ABE7006D3EEA /* BOMDefines.h in Headers */,
+				8476E1001AEB24B3005FFCB6 /* BOMInternal.h in Headers */,
 				84FE01BE1A85B298006D3EEA /* BOMStore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

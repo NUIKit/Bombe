@@ -7,7 +7,7 @@
 //
 
 #include "BOMStream.h"
-#include "Internal.h"
+#include "BOMInternal.h"
 
 struct __BOMStream {
 	int fd;

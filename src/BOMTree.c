@@ -10,7 +10,7 @@
 #include "BOMStore.h"
 #include "BOMStream.h"
 #include "BOMStack.h"
-#include "Internal.h"
+#include "BOMInternal.h"
 
 #include <stdio.h>
 
