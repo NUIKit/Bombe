@@ -3,6 +3,7 @@ AC_INIT([libBombe], [0.1], [devteam.codafi@gmail.com], [libBombe])
 AC_REVISION([$$])
 AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_HEADER([config/config.h])
+AC_CONFIG_MACRO_DIR([m4])
 ac_clean_files=a.out.dSYM
 AM_MAINTAINER_MODE
 
