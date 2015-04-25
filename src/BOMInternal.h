@@ -42,6 +42,12 @@
 
 #include <sys/stat.h>
 
+#if !TARGET_OS_WIN32 
+#include <sys/mman.h>
+#else
+#include "sys_queue.h"
+#endif
+
 #include <assert.h>
 #include <errno.h>
 #if HAVE_FCNTL_H
