@@ -1,8 +1,7 @@
 language: c
 
-compiler:
-    - gcc
-    - clang
+os:
+    - osx
 
 before_script:
     - ./autogen.sh
