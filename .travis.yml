@@ -5,7 +5,7 @@ compiler:
     - clang
 
 before_script:
-    - autoreconf -i
+    - ./autogen.sh
 script:
     - ./configure
     - make
