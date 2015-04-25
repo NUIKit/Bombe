@@ -1,5 +1,12 @@
-before_install:
-  - ./autogen.sh
-
 language: c
+
+compiler:
+    - gcc
+    - clang
+
+before_script:
+    - autoreconf -i
+script:
+    - ./configure
+    - make
 
