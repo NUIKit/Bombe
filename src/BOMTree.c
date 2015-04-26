@@ -12,8 +12,6 @@
 #include "BOMStack.h"
 #include "BOMInternal.h"
 
-#include <stdio.h>
-
 typedef struct BOMTreeNode {
 	uint32_t blockID;
 	int16_t isLeaf;
