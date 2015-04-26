@@ -28,6 +28,8 @@
 #include <vm/vm.h>
 #include <vm/vm_map.h>
 #include <vm/vm_object.h>
+#elif HAVE_SYS_MMAN_H
+#include <sys/mman.h>
 #else
 #error Current target does not support mmap
 #endif /* HAVE_MACH */

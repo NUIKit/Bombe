@@ -19,7 +19,7 @@ LT_INIT([disable-static])
 ## Checks for header files.
 #
 AC_HEADER_STDC
-AC_CHECK_HEADERS([TargetConditionals.h fcntl.h malloc/malloc.h libkern/OSCrossEndian.h libkern/OSAtomic.h vm/vm.h vm/vm_map.h vm/vm_object.h])
+AC_CHECK_HEADERS([TargetConditionals.h fcntl.h malloc/malloc.h libkern/OSCrossEndian.h libkern/OSAtomic.h vm/vm.h vm/vm_map.h vm/vm_object.h sys/mman.h])
 
 #
 ## Checks for mach.
