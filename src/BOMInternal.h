@@ -28,8 +28,8 @@
 #include <vm/vm.h>
 #include <vm/vm_map.h>
 #include <vm/vm_object.h>
-#else "Current target does not support mmap()"
-#error
+#else
+#error Current target does not support mmap
 #endif /* HAVE_MACH */
 
 #if HAVE_MALLOC_MALLOC_H
