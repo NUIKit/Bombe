@@ -28,9 +28,11 @@
 #include <vm/vm.h>
 #include <vm/vm_map.h>
 #include <vm/vm_object.h>
-#elif HAVE_SYS_MMAN_H
+#elif HAVE_SYS_MMAN_H && HAVE_UNISTD_H
+#include <unistd.h>
 #include <sys/mman.h>
 #define vm_size_t		size_t	/* No VM in sight. */
+#define vm_address_t	size_t
 #define KERN_SUCCESS	0		/* But a guy can dream, can't he? */
 #else
 #error Current target does not support mmap
@@ -70,7 +72,8 @@
 
 /* For Linux where PAGE_SIZE is a kernel call. */
 #ifndef PAGE_SIZE
-#define PAGE_SIZE getpagesize();
+#define PAGE_SIZE getpagesize()
+#define vm_page_size getpagesize()
 #endif
 
 #endif
