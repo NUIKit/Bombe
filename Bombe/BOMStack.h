@@ -12,6 +12,7 @@
 #include <Bombe/BOMDefines.h>
 
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdlib.h>
 
 typedef const struct __BOMStack * BOMStackRef;
