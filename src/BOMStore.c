@@ -95,7 +95,7 @@ struct __BOMStore *BOMStoreCreate(const char *path, bool mutable) {
 	BOMStreamFree(stream);
 	
 	// mmap in the BOM file.
-	if ((store->mmapAddr = mmap(NULL, stat.st_size, PROT_READ, MAP_ANON | MAP_PRIVATE, fd, VM_FLAGS_FIXED)) == MAP_FAILED) {
+	if ((store->mmapAddr = mmap(NULL, stat.st_size, PROT_READ, MAP_ANON | MAP_PRIVATE, fd, 0)) == MAP_FAILED) {
 		close(fd);
 		BOMStoreFree(store);
 		return NULL;
