@@ -10,6 +10,6 @@ libBombe_la_SOURCES = \
 	BOMTree.c \
 	BOMStore.c
 
-libBombe_la_CFLAGS = -I"$(top_srcdir)" -I"$(top_srcdir)/Bombe"
+libBombe_la_CFLAGS = -Wall -std=c99 -I"$(top_srcdir)" -I"$(top_srcdir)/Bombe"
 libBombe_la_LDFLAGS = -version-info 0:0:0 
 
