@@ -13,32 +13,28 @@
 
 #if HAVE_LIBKERN_OSCROSSENDIAN_H
 #include <libkern/OSCrossEndian.h>
-#endif
+#endif /* HAVE_LIBKERN_OSCROSSENDIAN_H */
+
 #if HAVE_LIBKERN_OSATOMIC_H
 #include <libkern/OSAtomic.h>
-#endif
+#endif /* HAVE_LIBKERN_OSATOMIC_H */
+
 #if HAVE_MACH
 #include <mach/boolean.h>
-#include <mach/clock_types.h>
-#include <mach/clock.h>
-#include <mach/exception.h>
 #include <mach/mach.h>
-#include <mach/mach_error.h>
-#include <mach/mach_host.h>
-#include <mach/mach_interface.h>
-#include <mach/mach_time.h>
-#include <mach/mach_traps.h>
-#include <mach/message.h>
-#include <mach/mig_errors.h>
-#include <mach/host_special_ports.h>
-#include <mach/host_info.h>
-#include <mach/notify.h>
 #include <mach/mach_vm.h>
 #include <mach/vm_map.h>
+#elif HAVE_VM_VM_H && HAVE_VM_VM_MAP_H && HAVE_VM_VM_OBJECT_H
+#include <vm/vm.h>
+#include <vm/vm_map.h>
+#include <vm/vm_object.h>
+#else "Current target does not support mmap()"
+#error
 #endif /* HAVE_MACH */
+
 #if HAVE_MALLOC_MALLOC_H
 #include <malloc/malloc.h>
-#endif
+#endif /* HAVE_MALLOC_MALLOC_H */
 
 #include <sys/stat.h>
 
@@ -50,9 +46,11 @@
 
 #include <assert.h>
 #include <errno.h>
+
 #if HAVE_FCNTL_H
 #include <fcntl.h>
-#endif
+#endif /* HAVE_FCNTL_H */
+
 #include <limits.h>
 #include <search.h>
 #include <signal.h>
@@ -64,6 +62,11 @@
 #include <string.h>
 #if HAVE_UNISTD_H
 #include <unistd.h>
+#endif /* HAVE_UNISTD_H */
+
+/* For Linux where PAGE_SIZE is a kernel call. */
+#ifndef PAGE_SIZE
+#define PAGE_SIZE getpagesize();
 #endif
 
 #endif
