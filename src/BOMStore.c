@@ -215,7 +215,7 @@ void *BOMStoreCopyBlockData(BOMStoreRef sto, BOMBlock var) {
 	
 	BOMStreamRef blockStream = BOMStreamCreateWithBuffer(store->mmapAddr + addr, block->size);
 	void *blockData = malloc(block->size);
-	if (blockStream && blockData) {
+	if (blockStream != NULL && blockData != NULL) {
 		BOMStreamRead(blockStream, blockData, block->size);
 	}
 	BOMStreamFree(blockStream);
@@ -270,7 +270,7 @@ static void BOMExpandBlockTable(BOMStoreRef st, vm_size_t newSize) {
 	
 	if (store->blockTableSize < newSize) {
 		vm_size_t size = newSize;
-		if (size % vm_page_size != 0x0) {
+		if (size % vm_page_size != 0) {
 			size = (vm_page_size + size) - (size % vm_page_size);
 		}
 		BOMBlock *reallocAddr;

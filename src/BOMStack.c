@@ -55,7 +55,7 @@ void BOMStackPush(BOMStackRef stk, void *r14) {
 void *BOMStackPop(BOMStackRef stk) {
 	struct __BOMStack *stack = (struct __BOMStack *)stk;
 	
-	if (stack != NULL && stack->count > 0x0) {
+	if (stack != NULL && stack->count > 0) {
 		return stack->buf[stack->count--];
 	}
 	return NULL;
@@ -66,7 +66,7 @@ bool BOMStackIsEmpty(BOMStackRef stack) {
 }
 
 int32_t BOMStackCount(BOMStackRef stack) {
-	if (stack != 0x0) {
+	if (stack != NULL) {
 		return stack->count;
 	}
 	return 0;
