@@ -18,7 +18,7 @@ struct __BOMStack {
 	int32_t count;
 };
 
-BOMStackRef BOMStackNew() {
+BOMStackRef BOMStackNew(void) {
 	struct __BOMStack *stack = malloc(sizeof(struct __BOMStack));
 	if (stack != NULL) {
 		stack->maxSize = 1024;

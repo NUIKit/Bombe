@@ -17,7 +17,7 @@
 typedef const struct __BOMStack * BOMStackRef;
 
 BOMBE_EXPORT
-BOMStackRef BOMStackNew();
+BOMStackRef BOMStackNew(void);
 
 BOMBE_EXPORT
 void BOMStackFree(BOMStackRef stack);
