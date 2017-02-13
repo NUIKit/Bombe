@@ -12,3 +12,4 @@ EXTRA_DIST=
 	config/config.h \
 	Bombe.xcodeproj 
 
+test : ;

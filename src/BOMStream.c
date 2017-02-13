@@ -50,6 +50,10 @@ BOMStreamRef BOMStreamCreateWithFileDescriptor(int fd, size_t size) {
 	if (stream == NULL) {
 		return NULL;
 	}
+
+	stream->fd = fd;
+	stream->type = BOMStreamTypeFile;
+	stream->buf = NULL;
 	
 	void *buffer = malloc(size);
 	if (buffer == NULL) {
@@ -57,9 +61,7 @@ BOMStreamRef BOMStreamCreateWithFileDescriptor(int fd, size_t size) {
 		return NULL;
 	}
 	
-	stream->fd = fd;
 	stream->blockID = 0;
-	stream->type = BOMStreamTypeFile;
 	stream->byteOrder = BOMStreamByteOrderLittleEndian;
 	stream->size = size;
 	stream->buf = buffer;

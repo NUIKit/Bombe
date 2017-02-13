@@ -131,10 +131,12 @@ BOMTreeNodeRef BOMTreeNodeCreateWithBlockID(BOMTreeRef tree, uint32_t blockID) {
 	return freshPage;
 }
 
-void BOMTreeFree(BOMTreeRef tree) {
+void BOMTreeFree(BOMTreeRef t) {
+	struct __BOMTree *tree = (struct __BOMTree *)t;
 	if (tree == NULL) {
 		return;
 	}
 	
 	free(tree->path);
+	free(tree);
 }
